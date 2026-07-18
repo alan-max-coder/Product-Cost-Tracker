@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Product Cost Tracker"
+version = "1.0.0"
+id = "artifacts/cost-tracker"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18130
+
+[services.development]
+run = "pnpm --filter @workspace/cost-tracker run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/cost-tracker", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/cost-tracker/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18130"
+BASE_PATH = "/"
