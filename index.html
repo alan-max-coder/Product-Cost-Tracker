@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Cost Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>📦 Product Cost Tracker</h1>
+</header>
+
+<div class="container">
+
+<h2>Add Product</h2>
+
+<input type="text" id="name" placeholder="Product Name">
+<input type="number" id="cost" placeholder="Cost Price">
+<input type="number" id="sell" placeholder="Selling Price">
+
+<button onclick="addProduct()">Add Product</button>
+
+<h2>Products</h2>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cost</th>
+<th>Sell</th>
+<th>Profit</th>
+</tr>
+</thead>
+
+<tbody id="tableBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
